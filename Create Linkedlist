@@ -1,0 +1,61 @@
+// create linked list and display it;
+
+public class linkedlist{
+    class node{
+        int data;
+        node next;
+
+        public node(int data)
+        {
+            this.data=data;
+            this.next=null;
+
+        }
+    }
+    public node head=null;
+    public node tail=null;
+    public void addnode(int data)
+    {
+        node newnode= new node(data);
+        if (head==null) // linked lisrt is an empty condition;
+        {
+            head=newnode;
+            tail=newnode;
+
+        }
+        else
+        {
+            tail.next=newnode;
+            tail=newnode;
+
+        }
+
+    }
+    public void display()
+    {
+        node current =  head;
+        if (head==null)
+        {
+            System.out.println("linked list in the empty condition  ");
+            return;
+
+        }
+        System.out.println("nodes opf sigly linked list.......");
+        while(current!=null){
+            System.out.println(" "+current.data);
+            current=current.next;
+
+        }
+    }
+
+    public static void main(String[] args) {
+        linkedlist slist=new linkedlist();
+        slist.addnode(6);
+        slist.addnode(8);
+        slist.addnode(9);
+        slist.addnode(1);
+        slist.addnode(2);
+
+        slist.display();
+    }
+}
